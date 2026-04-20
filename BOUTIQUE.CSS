@@ -1,4 +1,102 @@
-/* Animações necessárias para o bloco Home Care */
+/* PALETA DE LUXO */
+:root {
+    --brand-500: #c5a89f; /* Rose Gold / Bronze */
+    --brand-950: #110d0c; /* Black Noir */
+    --white: #ffffff;
+    --gray-400: #a1a1aa;
+}
+
+/* SEÇÃO BOUTIQUE */
+.boutique-section {
+    background-color: var(--brand-950);
+    padding: 80px 20px;
+    color: var(--white);
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--brand-500);
+}
+
+.section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--gray-400);
+    margin-bottom: 50px;
+}
+
+/* GRADE DE PRODUTOS */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CARD DO PRODUTO (Estilo Dark Tech) */
+.product-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(197, 168, 159, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--brand-500);
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    filter: grayscale(20%);
+}
+
+.product-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.product-info p {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    margin-bottom: 20px;
+}
+
+.price {
+    display: block;
+    font-weight: bold;
+    color: var(--brand-500);
+    margin-bottom: 20px;
+}
+
+/* BOTÃO CTA BOUTIQUE */
+.cta-boutique {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid var(--brand-500);
+    color: var(--brand-500);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.cta-boutique:hover {
+    background: var(--brand-500);
+    color: var(--brand-950);
+}
+
+/* AS ANIMAÇÕES QUE VOCÊ MANDOU */
 @keyframes slide-horizontal {
     0% { transform: translateX(0); }
     100% { transform: translateX(-66.66%); }
@@ -17,10 +115,4 @@
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Garanta que as cores de luxo estejam mapeadas se não usar Tailwind config */
-:root {
-    --brand-500: #c5a89f;
-    --brand-950: #110d0c;
 }

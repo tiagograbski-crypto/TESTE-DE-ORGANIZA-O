@@ -1,0 +1,26 @@
+/* Animações necessárias para o bloco Home Care */
+@keyframes slide-horizontal {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-66.66%); }
+}
+
+.animate-slide-horizontal {
+    animation: slide-horizontal 12s linear infinite;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Garanta que as cores de luxo estejam mapeadas se não usar Tailwind config */
+:root {
+    --brand-500: #c5a89f;
+    --brand-950: #110d0c;
+}

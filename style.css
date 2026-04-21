@@ -69,3 +69,76 @@ body {
 }
 
 /* --- TIPOGRAFIA PREMIUM
+
+.faq-lisos-container {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-group-title {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin: 30px 0 15px 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-left: 3px solid #fff;
+    padding-left: 15px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    text-align: left;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-answer p {
+    padding: 20px;
+    color: #bbb;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.ativo .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-item.ativo .faq-answer {
+    max-height: 300px; /* Ajuste conforme o tamanho do texto */
+}
+
+

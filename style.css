@@ -1,0 +1,71 @@
+/*
+ * ESSÊNCIA DE ROMÃ - ESTILO GLOBAL (style.css)
+ * Arquitetura de Design System de Alto Padrão
+ * Regra #1: Código em expansão contínua.
+ */
+
+/* --- VARIÁVEIS GERAIS & MODOS (ALVORADA / CREPÚSCULO) --- */
+:root {
+    /* Paleta Crepúsculo (Dark/Obsidiana Padrão) */
+    --bg-primario: #0A0807; /* Obsidiana */
+    --bg-secundario: #1A1614;
+    --texto-primario: #F5EFEB;
+    --texto-secundario: #A69892;
+    --acento-rosegold: #C5A89F;
+    --acento-rosegold-glow: rgba(197, 168, 159, 0.3);
+    --borda-vidro: rgba(255, 255, 255, 0.05);
+    --fundo-vidro: rgba(10, 8, 7, 0.6);
+    
+    /* Tipografia Fluida (Escala Responsiva Profissional) */
+    --tamanho-texto-base: clamp(1rem, 0.9vw + 0.8rem, 1.1rem);
+    --tamanho-titulo-1: clamp(2.5rem, 4vw + 1.5rem, 5rem);
+    --tamanho-titulo-2: clamp(1.8rem, 3vw + 1rem, 3.5rem);
+    --tamanho-titulo-3: clamp(1.4rem, 2vw + 1rem, 2.2rem);
+}
+
+[data-theme="alvorada"] {
+    /* Paleta Alvorada (Light Mode de Luxo) */
+    --bg-primario: #FAF7F5;
+    --bg-secundario: #EBE5E0;
+    --texto-primario: #2A2422;
+    --texto-secundario: #5C524E;
+    --borda-vidro: rgba(0, 0, 0, 0.05);
+    --fundo-vidro: rgba(250, 247, 245, 0.6);
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--bg-primario);
+    color: var(--texto-primario);
+    font-size: var(--tamanho-texto-base);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* --- UTILITÁRIOS DE LUXO (GLASSMORPHISM) --- */
+.glass-effect {
+    background: var(--fundo-vidro);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--borda-vidro);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(197, 168, 159, 0.15);
+}
+
+/* --- TIPOGRAFIA PREMIUM

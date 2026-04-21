@@ -121,3 +121,17 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isAtivo = item.classList.contains('ativo');
+    
+    // Fecha todos os outros antes de abrir o novo (Opcional, para foco total)
+    document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('ativo');
+    });
+
+    if (!isAtivo) {
+        item.classList.add('ativo');
+    }
+}

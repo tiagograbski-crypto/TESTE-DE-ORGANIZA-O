@@ -1,6 +1,6 @@
 /**
  * ARQUIVO DE INTELIGÊNCIA E RASTREAMENTO - ESSÊNCIA DE ROMÃ
- * Versão: 2.0 (Blindada)
+ * Versão: 2.1 (Blindada + Desbloqueio de Preloader)
  */
 
 // 1. CONFIGURAÇÃO DO TAILWIND (Integrada para processamento via CDN)
@@ -122,6 +122,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+// 6. LÓGICA DA PÁGINA DE LISOS (FAQ E MODO GAVETA)
 function toggleFaq(btn) {
     const item = btn.parentElement;
     const isAtivo = item.classList.contains('ativo');
@@ -135,3 +136,52 @@ function toggleFaq(btn) {
         item.classList.add('ativo');
     }
 }
+
+function selecionarProtocolo(tipo) {
+    // Esconde a seleção inicial (os dois cards lado a lado)
+    const containerCards = document.querySelector('.protocolos-cards-container');
+    if (containerCards) {
+        containerCards.style.display = 'none';
+    }
+    
+    // Altera o título lá em cima para manter a imersão da cliente
+    const tituloHero = document.querySelector('.hero-lisos h1');
+    const subtituloHero = document.querySelector('.hero-lisos p');
+    
+    if(tituloHero && subtituloHero) {
+        tituloHero.innerText = tipo === 'gloss' ? 'Gloss Premium' : 'Molecular Platinum Fusion';
+        subtituloHero.innerText = 'Explore as etapas da sua transformação.';
+    }
+
+    // Esconde todas as gavetas por segurança antes de abrir a certa
+    document.querySelectorAll('.secao-oculta').forEach(gaveta => {
+        gaveta.style.display = 'none';
+    });
+
+    // Mostra a gaveta com o conteúdo exclusivo que a cliente escolheu
+    if (tipo === 'gloss') {
+        const gavetaGloss = document.getElementById('gaveta-gloss');
+        if(gavetaGloss) gavetaGloss.style.display = 'block';
+    } else if (tipo === 'molecular') {
+        const gavetaMolecular = document.getElementById('gaveta-molecular');
+        if(gavetaMolecular) gavetaMolecular.style.display = 'block';
+    }
+
+    // Faz o scroll suave de volta pro topo da tela
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// 7. DESBLOQUEIO DA TELA DE CARREGAMENTO (PRELOADER)
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // Adiciona uma transição suave para desaparecer no estilo Dark Tech
+        preloader.style.transition = 'opacity 0.5s ease';
+        preloader.style.opacity = '0';
+        
+        // Remove o elemento do caminho após o fade-out
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }
+});

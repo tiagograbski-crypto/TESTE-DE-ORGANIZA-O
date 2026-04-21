@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolos de Alinhamento - Alta performançe</title>
+    <link rel="stylesheet" href="../style.css">
+    </head>
+<body class="dark-tech-theme">
+
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <header class="hero-lisos efeito-lanterna">
+        <h1 class="titulo-fluido">A Ciência do Alinhamento Absoluto</h1>
+        <p class="subtitulo-luxo">Selecione a sua jornada de transformação.</p>
+    </header>
+    <section class="protocolos-cards-container">
+        
+        <div class="card-glassmorphism card-protocolo" id="card-gloss">
+            <h2 class="titulo-card">Gloss Premium</h2>
+            <p class="marca-destaque">by Gata Lambeu</p>
+            
+            <div class="ancoragem-valores">
+                <span class="valor-label">Investimento:</span>
+                <span class="valor-faixa">R$ 397 a R$ 1.497</span>
+            </div>
+            
+            <div class="info-tecnica">
+                <p><strong>Durabilidade:</strong> até 4 meses</p>
+                <p><strong>Indicação:</strong> Para todos os tipos de cabelo.</p>
+            </div>
+            
+            <p class="copy-sensorial">
+                Alinhamento orgânico de alta performance. Nossa fórmula exclusiva garante um liso perfeito e seguro, com a vantagem de não amarelar fios claros, com mechas ou descoloridos.
+            </p>
+            
+            <button class="btn-luxo bolinha-pulsante" onclick="selecionarProtocolo('gloss')">Descobrir Gloss Premium</button>
+        </div>
+
+        <div class="card-glassmorphism card-protocolo" id="card-molecular">
+            <h2 class="titulo-card">Molecular Platinum Fusion</h2>
+            
+            <div class="ancoragem-valores">
+                <span class="valor-label">Investimento:</span>
+                <span class="valor-faixa">R$ 427 a R$ 1.527</span>
+            </div>
+            
+            <div class="info-tecnica">
+                <p><strong>Durabilidade:</strong> até 5 meses</p>
+                <p><strong>Indicação:</strong> Para todos os tipos de cabelo espeçial para Descoloridos.</p>
+            </div>
+            
+            <p class="copy-sensorial">
+                Reconstrução e alinhamento de ultra-luxo. Enriquecido com a tecnologia <strong>V43</strong>, um pigmento inteligente que neutraliza ativamente os tons amarelados indesejados durante o processo.
+            </p>
+            
+            <button class="btn-luxo bolinha-pulsante" onclick="selecionarProtocolo('molecular')">Descobrir Molecular</button>
+        </div>
+
+    </section>
+    <script src="../script.js"></script>
+    </body>
+</html>
+<section id="gaveta-gloss" class="secao-oculta monograma-bg" style="display: none;">
+        <h3 class="titulo-fluido">Experiência Gloss Premium</h3>
+        <p class="copy-sensorial">Descubra os ativos de alta performance que transformam a estrutura do seu fio.</p>
+        
+        <div class="ativos-container">
+            <p class="texto-ativo">Ativos Híbridos e Proteção Extrema: Brilho espelhado sem amarelar os fios.</p>
+        </div>
+
+        <h4 class="subtitulo-luxo">Escolha sua Técnica de Finalização:</h4>
+        <div class="cards-finalizacao">
+            <div class="card-glassmorphism card-ramificacao">
+                <h5 class="titulo-card">Plástica Híbrida</h5>
+                <p>Redução de frizz e volume. Pausa de 15 a 40 minutos. Ideal para controle e balanço natural.</p>
+                <button class="btn-luxo bolinha-pulsante">Agendar Plástica Híbrida</button>
+            </div>
+            <div class="card-glassmorphism card-ramificacao">
+                <h5 class="titulo-card">Liso Soberano 8K</h5>
+                <p>Alinhamento absoluto e brilho extremo. A técnica definitiva para o liso perfeito.</p>
+                <button class="btn-luxo bolinha-pulsante">Agendar Liso Soberano 8K</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="gaveta-molecular" class="secao-oculta monograma-bg" style="display: none;">
+        <h3 class="titulo-fluido">Experiência Molecular Platinum Fusion</h3>
+        <p class="copy-sensorial">Reconstrução profunda com tecnologia inteligente V43 anti-amarelamento.</p>
+        
+        <div class="ativos-container">
+            <p class="texto-ativo">Nanotecnologia V43: Pigmento inteligente que neutraliza ativamente os tons amarelados indesejados.</p>
+        </div>
+
+        <h4 class="subtitulo-luxo">Escolha sua Técnica de Finalização:</h4>
+        <div class="cards-finalizacao">
+            <div class="card-glassmorphism card-ramificacao">
+                <h5 class="titulo-card">Plástica Híbrida</h5>
+                <p>Controle absoluto de frizz e matização. Pausa de 15 a 40 minutos.</p>
+                <button class="btn-luxo bolinha-pulsante">Agendar Plástica Híbrida</button>
+            </div>
+            <div class="card-glassmorphism card-ramificacao">
+                <h5 class="titulo-card">Liso Soberano 8K</h5>
+                <p>O mais alto padrão do liso impecável. Fios espelhados, alinhados e livres do tom amarelo.</p>
+                <button class="btn-luxo bolinha-pulsante">Agendar Liso Soberano 8K</button>
+            </div>
+        </div>
+    </section>
+    ```
+
+### Passo 2: Adicionar a "Engrenagem" no JavaScript
+
+Agora, para que os botões escondam os cards iniciais e mostrem essas gavetas, você precisa abrir o seu arquivo `script.js` (aquele principal que fica na pasta raiz do seu projeto) e colar este bloco de código **lá no final dele**.
+
+Como ditado pela nossa Regra Número 1, não apague nada que já está lá, apenas adicione este bloco novo no final do arquivo:
+
+```javascript
+/* 🟢 INÍCIO: LÓGICA DO MODO GAVETA (PÁGINA LISOS) */
+function selecionarProtocolo(tipo) {
+    // Esconde a seleção inicial (os dois cards lado a lado)
+    document.querySelector('.protocolos-cards-container').style.display = 'none';
+    
+    // Altera o título lá em cima para manter a imersão da cliente
+    const tituloHero = document.querySelector('.hero-lisos h1');
+    const subtituloHero = document.querySelector('.hero-lisos p');
+    
+    if(tituloHero && subtituloHero) {
+        tituloHero.innerText = tipo === 'gloss' ? 'Gloss Premium' : 'Molecular Platinum Fusion';
+        subtituloHero.innerText = 'Explore as etapas da sua transformação.';
+    }
+
+    // Mostra a gaveta com o conteúdo exclusivo que a cliente escolheu
+    if (tipo === 'gloss') {
+        document.getElementById('gaveta-gloss').style.display = 'block';
+    } else if (tipo === 'molecular') {
+        document.getElementById('gaveta-molecular').style.display = 'block';
+    }
+
+    // Faz o scroll suave de volta pro topo da tela
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+/* 🔴 FIM: LÓGICA DO MODO GAVETA (PÁGINA LISOS) */
+🟢
+<div class="secao-precos-luxo">
+    <h4 class="subtitulo-luxo">Tabela de Investimento</h4>
+    
+    <div class="card-glassmorphism tabela-precos">
+        <div class="linha-preco">
+            <span>Cabelo Curto (P)</span>
+            <span class="valor-item">A partir de R$ 397</span>
+        </div>
+        <div class="linha-preco">
+            <span>Cabelo Médio (M)</span>
+            <span class="valor-item">Consulte a Tabela</span>
+        </div>
+        <div class="linha-preco">
+            <span>Cabelo Longo (G)</span>
+            <span class="valor-item">Consulte a Tabela</span>
+        </div>
+        <div class="linha-preco">
+            <span>Extra Longo (GG)</span>
+            <span class="valor-item">Até R$ 1.527</span>
+        </div>
+    </div>
+
+    <p class="aviso-luxo">*Os valores podem variar conforme o diagnóstico capilar e volume dos fios.</p>
+
+    <div class="botoes-agendamento-container">
+        <a href="https://wa.me/SEU_NUMERO_CHAPEKO" target="_blank" class="btn-luxo btn-chapeco bolinha-pulsante">
+            <span class="icon-loc">📍</span> Agendar em Chapecó
+        </a>
+        <a href="https://wa.me/SEU_NUMERO_SEARA" target="_blank" class="btn-secundario-luxo">
+            Agendar em Seara
+        </a>
+    </div>
+</div>
+🔴
+<section class="faq-lisos-container">
+    <div class="faq-header">
+        <h2 class="titulo-fluido">Dúvidas Frequentes</h2>
+        <p class="subtitulo-luxo">A ciência por trás do seu liso perfeito.</p>
+    </div>
+
+    <div class="faq-grid">
+        <div class="faq-group">
+            <h3 class="faq-group-title">Molecular Platinum Fusion</h3>
+            
+            <div class="faq-item card-glassmorphism">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    O que é a tecnologia V43?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>O V43 é um pigmento de nanotecnologia inteligente exclusivo. Ele atua neutralizando os pigmentos amarelos e alaranjados que costumam aparecer em processos de alisamento comuns, garantindo que o loiro ou as mechas permaneçam com o tom preservado e vibrante.</p>
+                </div>
+            </div>
+
+            <div class="faq-item card-glassmorphism">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Qual a durabilidade real?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Devido à sua alta carga de reconstrução molecular, este protocolo oferece um alinhamento impecável com durabilidade de até 5 meses, dependendo dos cuidados home care.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h3 class="faq-group-title">Gloss Premium (Gata Lambeu)</h3>
+            
+            <div class="faq-item card-glassmorphism">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    O Gloss Premium amarela o cabelo?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Não. A linha Gata Lambeu foi desenvolvida para ser totalmente segura para fios claros e descoloridos. Sua formulação orgânica alinha a fibra sem causar oxidação ou alteração da cor original.</p>
+                </div>
+            </div>
+
+            <div class="faq-item card-glassmorphism">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Preciso de teste de mecha?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sempre! Apesar de serem produtos de ultra-luxo e seguros, o diagnóstico capilar e o teste de mecha são protocolos obrigatórios em nossa unidade para garantir a integridade total da sua saúde capilar.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h3 class="faq-group-title">Finalizações & Pós</h3>
+            
+            <div class="faq-item card-glassmorphism">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    O que é o Gloss Molecular (Efeito Cinderela)?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>É a nossa selagem com finalização de escova temporária. Perfeito para quem busca redução imediata de frizz e brilho espelhado para eventos, com uma técnica de pigmentação leve para realce do tom.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
